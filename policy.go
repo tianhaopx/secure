@@ -95,14 +95,13 @@ func (p *policy) addHeader(key string, value string) {
 
 func (p *policy) applyToContext(c *gin.Context) bool {
 	if !p.config.IsDevelopment {
-		p.writeSecureHeaders(c)
-
 		if !p.checkAllowHosts(c) {
 			return false
 		}
 		if !p.checkSSL(c) {
 			return false
 		}
+		p.writeSecureHeaders(c)
 	}
 	return true
 }
