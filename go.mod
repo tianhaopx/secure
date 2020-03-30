@@ -1,4 +1,4 @@
-module github.com/gin-contrib/secure
+module github.com/tianhaopx/secure
 
 require (
 	github.com/gin-gonic/gin v1.5.0
